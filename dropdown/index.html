@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>純 CSS 選單 Example</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet" />
+        
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript">
+        $(function(){
+            $("ul.navigation > li:has(ul) > a").append('<div class="arrow-bottom"></div>');
+            $("ul.navigation > li ul li:has(ul) > a").append('<div class="arrow-right"></div>');
+        });
+        </script>
+    </head>
+    <body>
+        <ul class="navigation">
+            <li>
+                <a href="#">選單內容 1</a>
+                <ul>
+                    <li><a href="#">選單內容 1 - 1</a></li>
+                    <li>
+                        <a href="#">選單內容 1 - 2</a>
+                        <ul>
+                            <li><a href="#">選單內容 2 - 1</a></li>
+                            <li>
+                                <a href="#">選單內容 2 - 2</a>
+                                <ul>
+                                    <li><a href="#">選單內容 3 - 1</a>
+                                        <ul>
+                                            <li>
+                                                <a href="#">選單內容 4 - 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">選單內容 4 - 2</a>
+                                                <ul>
+                                                    <li><a href="#">選單內容 5 - 1</a></li>
+                                                    <li>
+                                                        <a href="#">選單內容 5 - 2</a>
+                                                    </li>    
+                                                </ul>
+                                            </li>    
+                                        </ul>    
+                                    </li>
+                                    <li>
+                                        <a href="#">選單內容 3 - 2</a>
+                                    </li>    
+                                </ul>
+                            </li>    
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">選單內容 2</a></li>
+            <li><a href="#">選單內容 3</a></li>
+            <li><a href="#">選單內容 4</a></li>
+            <li><a href="#">選單內容 5</a></li>
+            <li><a href="#">選單內容 6</a></li>
+            <li><a href="#">選單內容 7</a></li>
+        </ul>
+    </body>
+</html>

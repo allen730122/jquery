@@ -1,0 +1,6 @@
+#menu li{list-style:none}
+#menu li a {float:left; margin:10px;}
+.clear {clear:both;}
+#productselection {}
+
+.active { color: red; font-weight: bold; }

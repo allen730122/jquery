@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>rwdToggleMenu</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style>
+	body {
+	    margin: 0;
+	    padding: 10px;
+	    font-size: 18px;
+	}
+	.nav {
+	    display: block;
+	    float: left;
+	    width: 100%;
+	    margin-bottom: 30px;             
+	}
+	.nav ul{
+	    margin: 0;
+	    padding: 0;
+	}
+	.nav li{
+	    position: relative;
+	    float: left;
+	    color: #FFF;
+	    list-style: none;
+	    background: #E77C40;
+	}
+	.nav li a {
+	    display: block;        
+	    padding: 15px 30px;
+	    color: #FFF;
+	    text-decoration: none;
+	}
+	 
+	.nav li:hover {
+	    background: #E9905E;
+	}
+	.nav li ul {
+	    background-color: rgba(231, 124, 64, 1);
+	    display: none;
+	    position: absolute;
+	    top: 100%;
+	}
+	.nav li:hover ul {
+	    display: block;
+	    right: 0;
+	    left: 0;
+	    top: 100%;
+	}
+	.toggle { 
+	    display: none;
+	}
+	.arrow-bottom {
+	    position: absolute;
+	    top: 25px;
+	    right: 13px;
+	    margin-left: 5px;
+	    border-top: 4px solid #FFF;
+	    border-right: 4px solid transparent;    
+	    border-left: 4px solid transparent;        
+	    width: 1px;
+	    height: 1px;
+	}
+	@media (max-width: 640px) { 
+	    .nav {
+	        display: none;
+	    }
+	    .toggle {
+	        display: inline-block;
+	        background: #D8540A;
+	        padding: 10px 15px;
+	        color: #FFF;
+	    }
+	    .nav li{
+	        float: none;
+	    }
+	    .nav li a{
+	        padding: 10px 15px;
+	    }
+	    .nav li:hover ul {
+	        position: relative;
+	        display: block;
+	        background: transparent;
+	    }
+	    .nav li:hover ul li{
+	        background: transparent;
+	    }
+	    .nav li:hover ul li a{
+	        padding-left: 30px;
+	    }
+	    .arrow-bottom {
+	        top: 20px;
+	    }
+	}
+	</style>
+</head>
+<body>
+<span class="toggle">Menu</span>
+<nav class="nav">
+    <ul>
+        <li>
+            <a href="#">Works</a>
+            <ul>
+                <li><a href="#">Work1</a></li>
+                <li><a href="#">Work2</a></li>
+                <li><a href="#">Work3</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
+        <li>
+	        <a href="#">About</a>
+	        <ul>
+                <li><a href="#">Work4</a></li>
+                <li><a href="#">Work5</a></li>
+                <li><a href="#">Work6</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Links</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Service</a></li>                
+    </ul>
+</nav>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".toggle").click(function() {
+        $(this).toggleClass("active");
+        $(".nav").slideToggle();
+    });
+    $(".nav > ul > li:has(ul) > a").append('<div class="arrow-bottom"></div>');
+});
+</script>
+</body>
+</html>
