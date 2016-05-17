@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+	<style type="text/css">
+	* {color:#ffffff;}
+	ul{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	}
+	li{float:left;
+	display:block;
+		width:120px;
+	text-align:center;
+	}
+
+	ul > li{background-color:#0000ff;}
+
+	ul > li > ul > li{background-color:#ff7700;}
+	</style>
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+	    $("#menu1,#menu2").children("ul").hide(); //hides the lists when documents loads
+
+
+	    $("#menu1,#menu2").hover( 
+	        function(){//onmouseover 
+	            $(this).children("ul").slideDown(); 
+	        }, 
+	        function(){//onmouseout 
+	            $(this).children("ul").slideUp(); 
+	    });
+	});
+	</script>
+</head>
+<body>
+<ul id="menu">
+    <li id="menu1">Sub 1
+        <ul>
+            <li>test 1</li>
+            <li>test 2</li>
+            <li>test 3</li>
+            <li>test 4</li>
+        </ul>
+    </li>
+    <li id="menu2">Sub 2
+        <ul>
+            <li>test 1</li>
+            <li>test 2</li>
+            <li>test 3</li>
+            <li>test 4</li>
+        </ul>
+    </li>
+</ul> 
+</body>
+</html>
